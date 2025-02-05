@@ -26,10 +26,55 @@ require('../../config.php');
 
 require_login();
 
-$url = new moodle_url('/local/esol_exam/index.php', []);
+$url        = new moodle_url('/local/esol_exam/index.php', []);
+$titlstr    = get_string('pluginname', 'local_esol_exam');
+$headingstr = get_string('pluginname', 'local_esol_exam');
+
 $PAGE->set_url($url);
 $PAGE->set_context(context_system::instance());
+$PAGE->set_title($titlstr);
+$PAGE->set_heading($headingstr);
+$PAGE->set_pagelayout('standard');
 
-$PAGE->set_heading($SITE->fullname);
+
+// Prepare template data
+$templatecontext = [
+    'exam_booking' => get_string('exam_booking', 'local_esol_exam'),
+    'browse_exams' => get_string('browse_exams', 'local_esol_exam'),
+    'session_type' => get_string('session_type', 'local_esol_exam'),
+    'all' => get_string('all', 'local_esol_exam'),
+    'online' => get_string('online', 'local_esol_exam'),
+    'on_place' => get_string('on_place', 'local_esol_exam'),
+    'exam_date' => get_string('exam_date', 'local_esol_exam'),
+    'exam_name' => get_string('exam_name', 'local_esol_exam'),
+    'date' => get_string('date', 'local_esol_exam'),
+    'price' => get_string('price', 'local_esol_exam'),
+    'action' => get_string('action', 'local_esol_exam'),
+    'book_now' => get_string('book_now', 'local_esol_exam'),
+    'filter' => get_string('filter', 'local_esol_exam'),
+    'no_sessions' => get_string('no_sessions', 'local_esol_exam'),
+    'sessions' => $sessions
+];
+
+// Include necessary CSS
+$PAGE->requires->css(new moodle_url('/local/esol_exam/styles.css'));
+
 echo $OUTPUT->header();
+echo $OUTPUT->render_from_template('local_esol_exam/exam_sessions', [
+    'exam_booking' => get_string('exam_booking', 'local_esol_exam'),
+    'browse_exams' => get_string('browse_exams', 'local_esol_exam'),
+    'session_type' => get_string('session_type', 'local_esol_exam'),
+    'all' => get_string('all', 'local_esol_exam'),
+    'online' => get_string('online', 'local_esol_exam'),
+    'on_place' => get_string('on_place', 'local_esol_exam'),
+    'exam_date' => get_string('exam_date', 'local_esol_exam'),
+    'exam_name' => get_string('exam_name', 'local_esol_exam'),
+    'date' => get_string('date', 'local_esol_exam'),
+    'price' => get_string('price', 'local_esol_exam'),
+    'action' => get_string('action', 'local_esol_exam'),
+    'book_now' => get_string('book_now', 'local_esol_exam'),
+    'filter' => get_string('filter', 'local_esol_exam'),
+    'no_sessions' => get_string('no_sessions', 'local_esol_exam'),
+    'sessions' => $sessions
+]);
 echo $OUTPUT->footer();

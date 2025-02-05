@@ -1,0 +1,76 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_esol_exam/exam_sessions
+
+    TODO describe template exam_sessions
+
+    Example context (json):
+    {
+    }
+}}
+
+
+{{! Exam Booking Page Template }}
+
+<div class="container mt-4">
+    <h2>{{exam_booking}}</h2>
+    <p>{{browse_exams}}</p>
+
+    <!-- Filters -->
+    <div class="row">
+        <div class="col-md-4">
+            <label for="sessionType">{{session_type}}</label>
+            <select id="sessionType" class="form-control">
+                <option value="">{{all}}</option>
+                <option value="online">{{online}}</option>
+                <option value="onplace">{{on_place}}</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label for="examDate">{{exam_date}}</label>
+            <input type="date" id="examDate" class="form-control">
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary mt-4" onclick="filterSessions()">{{filter}}</button>
+        </div>
+    </div>
+
+    <!-- Exam Sessions List -->
+    <div class="mt-4"> 
+        <div class="d-flex flex-column">
+
+        <a href="#" target="_blank">
+            <div class="d-flex flex-column"></div>
+                <div class="promo-grey rounded py-16 px-8 px-24-900 w-80px w-100-900"></div>
+                <div class="bg-info"></div>
+            </div>
+        </a>
+
+
+        <a  target="_blank">
+            <div class="d-flex rounded button-outline-light-grey flex-column-900 test-details">
+                <div class="promo-grey rounded py-16 px-8 px-24-900 w-80px w-100-900">
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100 hide-900">
+                        <h2 class="heading2 text-center">Feb 04 </h2>
+                        <span class="test-details__divider--sm"></span>
+                        <span  class="paragraph font-opensans">Tue</span>
+                    </div>
+                    <div class="hide show-900"><div  class="d-flex align-items-center justify-content-between test-details__heading"><h3 _ngcontent-ng-c2049144299="" class="font-medium"> 04 <span _ngcontent-ng-c2049144299="" class="hide show-400">Feb</span><span _ngcontent-ng-c2049144299="" class="hide-400">February</span>, Tuesday</h3><!----><!----><h3 _ngcontent-ng-c2049144299="" class="font-medium no-wrap">09:00 AM</h3></div></div></div><div _ngcontent-ng-c2049144299="" class="w-100 px-24 py-16 d-flex flex-column gap16 gap20-900"><div _ngcontent-ng-c2049144299="" class="d-flex align-items-center justify-content-between gap24"><div _ngcontent-ng-c2049144299="" class="d-flex flex-column gap6"><h3 _ngcontent-ng-c2049144299="" class="heading4">IELTS General Training</h3><div _ngcontent-ng-c2049144299="" class="d-flex align-items-center gap8"><!----><span _ngcontent-ng-c2049144299="" class="location-event heading5 d-flex align- gap8 font-medium-force clr-grey">IDP Education Riyadh (Male &amp; females) Tahlia Street (Test Room)</span><!----><!----></div><!----></div><div _ngcontent-ng-c2049144299="" class="hide-900 d-flex flex-column gap6 align-items-end"><h3 _ngcontent-ng-c2049144299="" class="heading4">09:00 AM</h3><!----><!----><div _ngcontent-ng-c2049144299="" datatracking-id="lrw-test-availability-high" class="d-flex align-items-center gap8"><img _ngcontent-ng-c2049144299="" alt="checkmark-circle_green.svg" width="20" height="20" src="https://image.ielts.idp.com/IELTS_Website_Rebrand/assets/listing/checkmark-circle_green.svg" class="  ng-lazyloaded"><span _ngcontent-ng-c2049144299="" class="test-details__text font-opensans">Seats available</span></div><!----></div><!----></div><div _ngcontent-ng-c2049144299="" class="spacer"></div><div _ngcontent-ng-c2049144299="" class="d-flex align-items-center justify-content-between gap24 flex-column-900"><div _ngcontent-ng-c2049144299="" class="d-flex align-items-center flex-wrap w-100 row-gap16 col-gap40 col-gap-lg-16 flex-column-900 align-items-start-900 details-lg gap-sm-12"><!----><!----><div _ngcontent-ng-c2049144299="" class="d-flex align-items-center gap8 details-lg-item"><img _ngcontent-ng-c2049144299="" width="20" height="20" alt="laptop_black" src="https://image.ielts.idp.com/IELTS_Website_Rebrand/assets/listing/results_black.svg" class="  ng-lazyloaded"><span _ngcontent-ng-c2049144299="" class="test-details__text font-opensans">Results expected in 1 to 5 days</span></div><!----><div _ngcontent-ng-c2049144299="" class="d-flex align-items-center gap8 details-lg-item"><img _ngcontent-ng-c2049144299="" width="20" height="20" alt="laptop_black" src="https://image.ielts.idp.com/IELTS_Website_Rebrand/assets/listing/laptop_black.svg" class="  ng-lazyloaded"><span _ngcontent-ng-c2049144299="" class="test-details__text font-opensans">IELTS on computer</span></div><!----><div _ngcontent-ng-c2049144299="" class="d-flex align-items-center gap8 details-lg-item"><img _ngcontent-ng-c2049144299="" alt="money_black" width="20" height="20" src="https://image.ielts.idp.com/IELTS_Website_Rebrand/assets/listing/money_black.svg" class="  ng-lazyloaded"><span _ngcontent-ng-c2049144299="" class="test-details__text font-opensans">SAR 1525</span></div><!----><div _ngcontent-ng-c2049144299="" class="d-flex align-items-center gap8 details-lg-item"><img _ngcontent-ng-c2049144299="" alt="support_black" width="20" height="20" src="https://image.ielts.idp.com/IELTS_Website_Rebrand/assets/listing/support_black.svg" class="  ng-lazyloaded"><span _ngcontent-ng-c2049144299="" class="test-details__text font-opensans">One Skill Retake available</span></div><!----></div><div _ngcontent-ng-c2049144299="" class="spacer w-100 hide show-900"></div><div _ngcontent-ng-c2049144299="" class="d-flex align-items-center justify-content-between w-100-900 flex-wrap gap16 flex-column-400"><div _ngcontent-ng-c2049144299=""><div _ngcontent-ng-c2049144299="" class="hide show-900"><!----><div _ngcontent-ng-c2049144299="" datatracking-id="lrw-test-availability-high" class="d-flex align-items-center gap8"><img _ngcontent-ng-c2049144299="" alt="checkmark-circle_green" width="20" height="20" src="https://image.ielts.idp.com/assets/img_px.gif" class=" ng-lazyloading"><span _ngcontent-ng-c2049144299="" class="test-details__text font-opensans">Seats available</span></div><!----></div></div><div _ngcontent-ng-c2049144299="" class="fullwidth-400"><button _ngcontent-ng-c2049144299="" class="org-cta button button-primary rounded-full min-w-140 fullwidth-400">Select and continue</button></div><!----><!----></div></div></div></div></a>
+    </div>
+</div>
+

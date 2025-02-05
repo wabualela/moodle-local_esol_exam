@@ -25,4 +25,21 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['pluginname'] = 'Esol exam';
+$string['pluginname']   = 'ESOL Exam Booking';
+$string['exam_booking'] = 'Exam Booking';
+$string['browse_exams'] = 'Browse and book your exam sessions.';
+$string['session_type'] = 'Session Type';
+$string['all']          = 'All';
+$string['online']       = 'Online';
+$string['on_place']     = 'On Place';
+$string['exam_date']    = 'Exam Date';
+$string['exam_name']    = 'Exam Name';
+$string['date']         = 'Date';
+$string['price']        = 'Price';
+$string['action']       = 'Action';
+$string['book_now']     = 'Book Now';
+$string['filter']       = 'Filter';
+$string['no_sessions']  = 'No available exam sessions.';
+
+
+
