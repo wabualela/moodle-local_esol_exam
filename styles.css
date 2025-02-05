@@ -13,8 +13,26 @@
     .w-100-900 {
         width: 100%;
     }
+
     .px-24-900 {
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+}
+
+.gap-responsive>* {
+    margin-bottom: 48px;
+    /* Default gap */
+}
+
+.gap-responsive>*:last-child {
+    margin-bottom: 0;
+    /* Remove margin for the last item */
+}
+
+@media (max-width: 900px) {
+    .gap-responsive>* {
+        margin-bottom: 32px;
+        /* Reduce gap to 32px on smaller screens */
     }
 }
